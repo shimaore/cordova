@@ -58,3 +58,7 @@ RUN \
 # Install Cordova.
 RUN \
   npm install -g cordova
+
+# Opt out of telemetry.
+RUN \
+  cordova telemetry off
