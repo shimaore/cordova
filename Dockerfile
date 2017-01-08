@@ -33,7 +33,10 @@ ENV PATH $PATH:$ANDROID_HOME/tools
 
 RUN \
   (yes | /usr/local/android-sdk-linux/tools/bin/sdkmanager --update) && \
-  (yes | /usr/local/android-sdk-linux/tools/bin/sdkmanager 'platforms;android-24')
+  (yes | /usr/local/android-sdk-linux/tools/bin/sdkmanager \
+    'build-tools;25.0.2' \
+    'platforms;android-24' \
+  )
 
 # /usr/local/android-sdk-linux/tools/bin/sdkmanager --list
 
