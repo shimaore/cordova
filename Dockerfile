@@ -41,7 +41,7 @@ RUN \
 ENV GRADLE_HOME /usr/local/gradle
 ENV GRADLE_ZIP gradle-3.3-bin.zip
 RUN \
-  curl -O https://services.gradle.org/distributions/$GRADLE_ZIP && \
+  curl -O https://downloads.gradle.org/distributions/$GRADLE_ZIP && \
   unzip -d $GRADLE_HOME $GRADLE_ZIP && \
   rm $GRADLE_ZIP
 ENV PATH $PATH:$GRADLE_HOME/tools
