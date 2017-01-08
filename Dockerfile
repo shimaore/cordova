@@ -1,5 +1,4 @@
 FROM debian:testing
-# FROM shimaore/debian:2.0.14
 MAINTAINER Stéphane Alnet <stephane@shimaore.net>
 
 # Inspired by and based on:
@@ -24,11 +23,12 @@ RUN \
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 # Install Android SDK.
-RUN \
-  curl -O https://dl.google.com/android/repository/tools_r25.2.3-linux.zip && \
-  unzip -d /usr/local/android-sdk-linux tools_r25.2.3-linux.zip && \
-  rm tools_r25.2.3-linux.zip
 ENV ANDROID_HOME /usr/local/android-sdk-linux
+ENV ANDROID_ZIP tools_r25.2.3-linux.zip
+RUN \
+  curl -O https://dl.google.com/android/repository/$ANDROID_ZIP && \
+  unzip -d $ANDROID_HOME $ANDROID_ZIP && \
+  rm $ANDROID_ZIP
 ENV PATH $PATH:$ANDROID_HOME/tools
 
 RUN \
