@@ -38,13 +38,13 @@ RUN \
 # /usr/local/android-sdk-linux/tools/bin/sdkmanager --list
 
 # Install Gradle.
-ENV GRADLE_HOME /usr/local/gradle
+ENV GRADLE_HOME /usr/local/gradle-3.3
 ENV GRADLE_ZIP gradle-3.3-bin.zip
 RUN \
   curl -O https://downloads.gradle.org/distributions/$GRADLE_ZIP && \
-  unzip -d $GRADLE_HOME $GRADLE_ZIP && \
+  unzip -d /usr/local $GRADLE_ZIP && \
   rm $GRADLE_ZIP
-ENV PATH $PATH:$GRADLE_HOME/tools
+ENV PATH $PATH:$GRADLE_HOME/bin
 
 # Install Node.js.
 RUN \
