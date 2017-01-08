@@ -37,15 +37,6 @@ RUN \
 
 # /usr/local/android-sdk-linux/tools/bin/sdkmanager --list
 
-# Install Gradle.
-ENV GRADLE_HOME /usr/local/gradle-2.14.1
-ENV GRADLE_ZIP gradle-2.14.1-bin.zip
-RUN \
-  curl -O https://downloads.gradle.org/distributions/$GRADLE_ZIP && \
-  unzip -d /usr/local $GRADLE_ZIP && \
-  rm $GRADLE_ZIP
-ENV PATH $PATH:$GRADLE_HOME/bin
-
 # Install Node.js.
 RUN \
   git clone https://github.com/tj/n.git n.git && \
