@@ -65,4 +65,11 @@ RUN \
 
 # Self-check
 RUN \
-  cordova requirements android
+  mkdir /opt/src && \
+  cordova create hello && \
+  cd hello && \
+  cordova platform add android --save && \
+  cordova build && \
+  cordova requirements android && \
+  cd /opt/src && \
+  rm -rf hello
