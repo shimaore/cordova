@@ -49,9 +49,14 @@ RUN \
   rm -rf n.git && \
   n 7.4.0
 
-# Install Cordova.
+# Install NPM packages
 RUN \
-  npm install -g cordova
+  npm install -g \
+    # Install Cordova.
+    cordova \
+    # Install coffee-script
+    # Used by https://github.com/metova/coffee-script-cordova-plugin
+    coffee-script
 
 # Opt out of telemetry.
 RUN \
