@@ -57,7 +57,7 @@ RUN \
 RUN \
   cordova telemetry off
 
-# Self-check
+# Self-check, install gradle etc.
 RUN \
   mkdir /opt/src && \
   cordova create hello && \
